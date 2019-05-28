@@ -211,8 +211,11 @@ titles = ["Extraversion (E) - Introversion (I)",
           "Thinking (T) - Feeling (F)",
           "Judgement (J) - Perception (P)"
          ]
-b_Pers = {'I':0, 'E':1, 'N':0, 'S':1, 'F':0, 'T':1, 'J':0, 'P':1}
-b_Pers_list = [{0:'I', 1:'E'}, {0:'N', 1:'S'}, {0:'F', 1:'T'}, {0:'J', 1:'P'}]
+b_Pers = {'I':1, 'E':0, 'N':1,'S':0, 'T':1, 'F':0, 'J':1, 'P': 0}
+b_Pers_list = [{1:'I', 0:'E'},
+               {1:'N', 0:'S'},
+               {1:'T', 0:'F'},
+               {1:'J', 0:'P'}]
 
 def translate_personality(personality):
     '''
