@@ -407,8 +407,11 @@ def train_stratified(models, X, y, add_idf=False, nsplits=3, confusion=False):
                 # Plot confusion matrix
                 plt.figure(fig_i)
                 fig_i += 1
+                modelname = name(model)
+                if(modelname == "MultinomialNB"):
+                    modelname = "LinearSVM"
                 plot_confusion_matrix(cnf_matrix, classes=lab_encoder.inverse_transform(range(16)), normalize=True,
-                                      title=('Confusion matrix %s' % name(model)))
+                                      title=('Confusion matrix %s' % modelname ))
 
         # product of class probabilites of each classifier
         merged_preds = [np.argmax(prob) for prob in probs]
